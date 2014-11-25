@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+
+project = File.expand_path("#{File.dirname(__FILE__)}/../")
+$LOAD_PATH.unshift "#{project}/lib"
+
+require "optparse"
+require "pandamark"
+
+options = {}
+
+parser = OptionParser.new do |opts|
+
+  opts.on "-o", "--output FILE", "path to a file to write output" do |file|
+    options[:file] = file
+  end
+
+end
+
+parser.parse!
+
+input = ARGF.read
+
+output = Pandamark.process(input, options)
+
+if options[:file]
+  File.open options[:file], "w" do |f|
+    f.puts output
+  end
+else
+  STDOUT.puts(output)
+end
+
