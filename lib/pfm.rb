@@ -1,5 +1,5 @@
 
-module Pandamark
+module PFM
 
   def self.process(string, options={})
     lines = string.split("\n")

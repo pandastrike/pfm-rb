@@ -4,7 +4,7 @@ project = File.expand_path("#{File.dirname(__FILE__)}/../")
 $LOAD_PATH.unshift "#{project}/lib"
 
 require "optparse"
-require "pandamark"
+require "pfm"
 
 options = {}
 
@@ -20,7 +20,7 @@ parser.parse!
 
 input = ARGF.read
 
-output = Pandamark.process(input, options)
+output = PFM.process(input, options)
 
 if options[:file]
   File.open options[:file], "w" do |f|
