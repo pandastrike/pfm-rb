@@ -37,7 +37,7 @@ This text:
 Processes to this markdown:
 
 
-```
+```markdown
 Sometimes you wish to have a footnote, but GFM<sup><a name="__gfm" href="#gfm">1</a>.</sup> doesn't have a syntax
 for it.  Pandoc<sup><a name="__pandoc" href="#pandoc">2</a>.</sup> has a nice syntax as illustrated here.
 
