@@ -7,7 +7,9 @@ A few clever extensions to GitHub Flavored Markdown syntax.
 
 ## Code Block includes
 
-    Include all of the content from another file (paths relative to PWD):
+    Include as a code block all of the content from another file (paths
+    relative to PWD). The code block type will be inferred from the
+    file extension when possible.
 
     ```path/to/source.coffee```
 
