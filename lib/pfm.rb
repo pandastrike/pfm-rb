@@ -28,7 +28,7 @@ module PFM
           end
 
           source_path = File.expand_path(source_path).strip
-          extension = File.extname(source_path)
+          extension = File.extname(source_path).slice(1..-1)
           out << "```#{extension}"
 
           embed = []
@@ -43,7 +43,11 @@ module PFM
           else
             stop = embed.size - 1
           end
-          out << embed.slice(start..stop).join()
+          selection = embed.slice(start..stop)
+          while selection.last =~ /^\s+$/
+            selection.pop
+          end
+          out << selection.join()
           out << "```\n"
         else
           out << line
